@@ -1,0 +1,10 @@
+{
+    "manifest_version": 3,
+    "name": "Send a chat to crush",
+    "version": "1.0.0",
+    "description": "A simple extension that helps you 1st move to your crush.",
+    "action": {
+      "default_popup": "index.html"
+    },
+    "permissions": []
+  }
