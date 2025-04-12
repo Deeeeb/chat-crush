@@ -6,14 +6,22 @@ import './App.css'
 function App() {
   const [count, setCount] = useState(0)
 
-  function handleClick() {
-    alert('hello')
+  async function handleClick() {
+    console.log("count: ", count);
+    console.log('path: ', window.location.href)
+    const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
+    console.log('tab: ', tab);
+  if (tab && tab.url) {
+    console.log('tab.url: ', tab.url);
+    // You can also copy to clipboard if needed:
+    // navigator.clipboard.writeText(tab.url);
+  }
   }
   
   return (
     <>
         <button onClick={() => handleClick()}>
-          Chat to crush {count}
+          get link
         </button>
     </>
   )
